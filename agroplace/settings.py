@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'agroplace.apps.users',
     'agroplace.apps.products',
+    'agroplace.apps.orders',
 ]
 
 AUTH_USER_MODEL = 'users.Users'

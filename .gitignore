@@ -133,3 +133,4 @@ dmypy.json
 /.idea/
 /agroplace/apps/users/migrations/
 /agroplace/apps/products/migrations/
+/agroplace/apps/orders/migrations/

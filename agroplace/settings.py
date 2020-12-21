@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'agroplace.apps.users',
 ]
+
+AUTH_USER_MODEL = 'users.Users'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -119,3 +123,35 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'agroplace/static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'agroplace/media')
+MEDIA_URL = '/media/'
+
+if not DEBUG:
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'warning': {
+                'level': 'WARNING',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'agroplace/logs/warning.log'),
+            },
+            'error': {
+                'level': 'ERROR',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'agroplace/logs/error.log'),
+            },
+            'critical': {
+                'level': 'CRITICAL',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'agroplace/logs/critical.log'),
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['warning', 'error', 'critical'],
+                'propagate': True,
+            },
+        },
+    }

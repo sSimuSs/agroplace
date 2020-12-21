@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'agroplace.apps.users',
+    'agroplace.apps.products',
 ]
 
 AUTH_USER_MODEL = 'users.Users'

@@ -26,3 +26,11 @@ class ProductsInOrders(models.Model):
 
     def get_total_cost(self) -> float:
         return self.cost*self.qty
+
+
+class Cart(models.Model):
+    user = models.ForeignKey('users.Users', on_delete=models.CASCADE)
+    product = models.ForeignKey('products.Products', on_delete=models.CASCADE)
+    qty = models.PositiveIntegerField(default=1)
+    cost = models.FloatField()
+    date = models.DateTimeField(auto_now_add=True)

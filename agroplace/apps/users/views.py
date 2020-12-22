@@ -25,7 +25,7 @@ def register(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            print("Saved!")
+            return redirect('/login')
     else:
         form = RegisterForm()
     return render(request, 'pages/register.html', {'form': form})
@@ -36,7 +36,11 @@ def login(request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             system_login(request, user=form.get_user())
-            return redirect('/')
+            nxt = request.GET.get("next", None)
+            if not nxt:
+                return redirect('/')
+            else:
+                return redirect(nxt)
     else:
         form = AuthenticationForm()
     return render(request, 'pages/login.html', {'form': form})

@@ -12,7 +12,7 @@ def products_images_directory_path(instance, filename):
 class Products(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    cost = models.IntegerField()
+    cost = models.FloatField()
     image = models.ImageField(upload_to=products_images_directory_path)
     status = models.BooleanField(default=True)
     date = models.DateTimeField(auto_now_add=True)

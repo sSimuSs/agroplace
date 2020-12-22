@@ -9,6 +9,10 @@ from agroplace.apps.users.views import register, login
 from agroplace.apps.orders.views import cart
 from agroplace.apps.products.views import product
 
+admin.autodiscover()
+admin.site.site_header = 'AGROPLACE - ADMINISTRATION'
+admin.site.site_title = 'AGROPLACE - ADMINISTRATION'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 

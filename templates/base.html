@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Agroplace.uz</title>
+      {% if page_title %}
+        <title>{{ page_title }} | Agroplace.uz</title>
+      {% else %}
+        <title>Agroplace.uz</title>
+      {% endif %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

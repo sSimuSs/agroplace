@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth import login as system_login, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.validators import RegexValidator
+from django.utils.translation import ugettext_lazy as _
 from .models import Users
 
 
@@ -28,7 +29,8 @@ def register(request):
             return redirect('/login')
     else:
         form = RegisterForm()
-    return render(request, 'pages/register.html', {'form': form})
+    page_title = _("Registration")
+    return render(request, 'pages/register.html', {'form': form, 'page_title': page_title})
 
 
 def login(request):
@@ -43,4 +45,5 @@ def login(request):
                 return redirect(nxt)
     else:
         form = AuthenticationForm()
-    return render(request, 'pages/login.html', {'form': form})
+    page_title = _("Authorization")
+    return render(request, 'pages/login.html', {'form': form, 'page_title': page_title})

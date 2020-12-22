@@ -47,6 +47,46 @@
     	</div>
     </section>
 
+    <section class="ftco-section ftco-no-pt">
+    	<div class="container">
+				<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<span class="subheading">Products</span>
+            <h2 class="mb-4">Related Products</h2>
+            <p>Far far away, behind the word mountains, far from the Uzbekistan</p>
+          </div>
+        </div>
+    	</div>
+    	<div class="container">
+    		<div class="row">
+    			{% for prd in related %}
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="/product/{{ prd.id }}" class="img-prod"><img class="img-fluid" src="{{ prd.image.url }}" alt="{{ prd.name }}">
+    					</a>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="#">{{ prd.name }}</a></h3>
+    						<div class="d-flex">
+    							<div class="pricing">
+		    						<p class="price"><span class="mr-2">${{prd.cost}}</span></p>
+		    					</div>
+	    					</div>
+	    					<div class="bottom-area d-flex px-3">
+	    						<div class="m-auto d-flex">
+	    							<a href="/product/{{ prd.id }}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    								<span><i class="ion-ios-cart"></i></span>
+	    							</a>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+                {% endfor %}
+
+    		</div>
+    	</div>
+    </section>
+
 {% endblock %}
 
 {% block myjs %}

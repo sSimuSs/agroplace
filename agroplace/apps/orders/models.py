@@ -7,6 +7,13 @@ class Orders(models.Model):
     user = models.ForeignKey('users.Users', on_delete=models.SET_NULL, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
+    def total_cost(self) -> float:
+        offerings = ProductsInOrders.objects.filter(order=self)
+        total = 0
+        for ofrng in offerings:
+            total += ofrng.get_total_cost()
+        return total
+
 
 class ProductsInOrders(models.Model):
     """ Model of Products in order. """

@@ -9,9 +9,8 @@ class ProductsInOrdersAdminInline(admin.TabularInline):
 
 @admin.register(Orders)
 class OrdersAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'offerings', 'total_cost', 'status', 'date']
+    list_display = ['id', 'user', 'offerings', 'total_cost', 'date']
     search_fields = ['user']
-    list_filter = ['status']
     inlines = [ProductsInOrdersAdminInline]
 
     def offerings(self, obj):

@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 
     'agroplace.apps.users',
     'agroplace.apps.products',
     'agroplace.apps.orders',
+    'agroplace.apps.system',
+    'agroplace.apps.banners',
 ]
 
 AUTH_USER_MODEL = 'users.Users'
@@ -126,8 +129,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'agroplace/static')
+STATICFILES_DIRS = [
+    BASE_DIR / "agroplace/static/agro",
+]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'agroplace/media')
 MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGOUT_REDIRECT_URL = 'home'
 
 if not DEBUG:
     LOGGING = {

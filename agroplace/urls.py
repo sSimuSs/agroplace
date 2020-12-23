@@ -7,7 +7,7 @@ from django.urls import path
 from agroplace.apps.system.views import home
 from agroplace.apps.users.views import register, login
 from agroplace.apps.orders.views import cart
-from agroplace.apps.products.views import product
+from agroplace.apps.products.views import product, category
 
 admin.autodiscover()
 admin.site.site_header = 'AGROPLACE - ADMINISTRATION'
@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^cart/$', cart, name='cart'),
     url(r'^product/(?P<pk>\d+)/$', product, name='product'),
+    url(r'^category/(?P<pk>\d+)/$', category, name='category'),
     url(r'^$', home, name='home'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

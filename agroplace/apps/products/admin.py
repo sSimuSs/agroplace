@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.utils.html import format_html
-from .models import Products
+from .models import Products, Categories
 from django.contrib.admin.widgets import AdminFileWidget
 
 
@@ -35,3 +35,11 @@ class ProductsAdmin(admin.ModelAdmin):
         else:
             return "---"
 
+
+@admin.register(Categories)
+class CategoriesAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'status']
+    list_editable = ['status']
+    list_display_links = ['name']
+    list_per_page = 20
+    formfield_overrides = {models.ImageField: {'widget': AdminImageWidget}}

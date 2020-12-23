@@ -3,7 +3,7 @@
 {% block content %}
     <section id="home-section" class="hero">
 		  <div class="home-slider owl-carousel">
-              {% for banner in banners %}
+              {% for banner in main_banners %}
                   <div class="slider-item" style="background-image: url({{banner.image.url}});">
                     <div class="overlay"></div>
                     <div class="container">
@@ -73,7 +73,21 @@
 			</div>
 		</section>
 
-
+<section class="ftco-section ftco-category ftco-no-pt">
+			<div class="container">
+				<div class="row">
+                    {% for cat in categories %}
+                        <div class="col-md-4">
+                            <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end fadeInUp ftco-animated" style="background-image: url({{ cat.banner_image.url }});">
+                                <div class="text px-3 py-1">
+                                    <h2 class="mb-0"><a href="/category/{{ cat.id }}">{{ cat.name }}</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+				</div>
+			</div>
+		</section>
 
     <section class="ftco-section ftco-no-pt">
     	<div class="container">

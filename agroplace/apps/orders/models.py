@@ -5,6 +5,7 @@ class Orders(models.Model):
     """ Model of orders. """
 
     user = models.ForeignKey('users.Users', on_delete=models.SET_NULL, null=True)
+    comment = models.TextField(blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def total_cost(self) -> float:

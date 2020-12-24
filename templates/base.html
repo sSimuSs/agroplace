@@ -1,4 +1,7 @@
 {% load static %}
+{% load i18n %}
+{% load my_template_tags %}
+{% get_available_languages as LANGUAGES %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +19,9 @@
 
     <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css'%}">
     <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    {% for lang_code, lang_name in LANGUAGES %}
+    <link rel="alternate" hreflang="{{ lang_code }}" href="{% change_lang lang_code %}">
+    {% endfor %}
 
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
@@ -64,16 +70,26 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">{% translate 'Home' %}</a></li>
             {% if user.is_authenticated %}
-                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">{% translate 'Logout' %}</a></li>
                 <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
             {% else %}
-                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
-	            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Registering</a></li>
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">{% translate 'Login' %}</a></li>
+	            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">{% translate 'Registration' %}</a></li>
             {% endif %}
 
-
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_language_info for LANGUAGE_CODE as lang %}
+            {% get_language_info_list for LANGUAGES as languages_info_list %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{lang.name_local}}</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                {% for lang_info in languages_info_list %}
+                <a class="dropdown-item {% if LANGUAGE_CODE == lang_info.code %}disabled{% endif %}" href="{% change_lang lang_info.code %}"> {{ lang_info.name_local|capfirst }}</a>
+                {% endfor %}
+              </div>
+            </li>
 
 	        </ul>
 	      </div>
@@ -86,21 +102,21 @@
       <div class="container py-4">
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">
-          	<h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
+          	<h2 style="font-size: 22px;" class="mb-0">{% translate "Subcribe to our Newsletter" %}</h2>
           	<span>Get e-mail updates about our latest shops and special offers</span>
           </div>
           <div class="col-md-6 d-flex align-items-center">
             <form action="#" class="subscribe-form">
               <div class="form-group d-flex">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
+                <input type="text" class="form-control" placeholder="{% translate 'Enter email address' %}">
+                <input type="submit" value="{% translate 'Subscribe' %}" class="submit px-3">
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <footer class="ftco-footer ftco-section">
+    <footer class="ftco-footer ftco-section ftco-no-pb">
       <div class="container">
       	<div class="row">
       		<div class="mouse">

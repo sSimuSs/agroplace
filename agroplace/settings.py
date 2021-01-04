@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,10 +141,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGOUT_REDIRECT_URL = 'home'
 
 LANGUAGES = [
-  ('ru', _('Russian')),
   ('en', _('English')),
+  ('ru', _('Russian')),
   ('uz', _('Uzbek')),
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 if not DEBUG:
     LOGGING = {

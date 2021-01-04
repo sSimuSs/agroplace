@@ -24,7 +24,7 @@ class AdminImageWidget(AdminFileWidget):
 class ProductsAdmin(admin.ModelAdmin):
     list_display = ['id', 'product_image', 'name', 'cost', 'status', 'date']
     list_editable = ['status', 'cost']
-    list_display_links = ['name']
+    list_display_links = ['product_image', 'name', 'id']
     list_per_page = 20
     formfield_overrides = {models.ImageField: {'widget': AdminImageWidget}}
 
@@ -40,6 +40,6 @@ class ProductsAdmin(admin.ModelAdmin):
 class CategoriesAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'status']
     list_editable = ['status']
-    list_display_links = ['name']
+    list_display_links = ['name', 'id']
     list_per_page = 20
     formfield_overrides = {models.ImageField: {'widget': AdminImageWidget}}

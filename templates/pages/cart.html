@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
-
 {% block content %}
 <section class="ftco-section ftco-cart ftco-no-pt">
 			<div class="container">
@@ -13,10 +12,10 @@
 						      <tr class="text-center">
 						        <th>&nbsp;</th>
 						        <th>&nbsp;</th>
-						        <th>Product name</th>
-						        <th>Price</th>
-						        <th>Quantity</th>
-						        <th>Total</th>
+						        <th>{% translate 'Product name' %}</th>
+						        <th>{% translate 'Price' %}</th>
+						        <th>{% translate 'Quantity' %}</th>
+						        <th>{% translate 'Total' %}</th>
 						      </tr>
 						    </thead>
 						    <tbody>
@@ -26,11 +25,11 @@
                                     <td class="product-remove"><a href="?delete={{ c.product_id }}"><span class="ion-ios-close"></span></a></td>
 
                                       <td class="image-prod">
-                                          <a href="/product/{{ c.product.id }}"><div class="img" style="background-image:url({{ c.product.image.url }});"></div></a>
+                                          <a href="{% url 'product' pk=c.product.id %}"><div class="img" style="background-image:url({{ c.product.image.url }});"></div></a>
                                       </td>
 
                                     <td class="product-name">
-                                        <a href="/product/{{ c.product.id }}">
+                                        <a href="{% url 'product' pk=c.product.id %}">
                                         <h3>{{ c.product.name }}</h3>
                                         </a>
     {#						        	<p>Far far away, behind the word mountains, far from the countries</p>#}
@@ -76,27 +75,27 @@
             {% if cart|length != 0 %}
     		<div class="row">
 
-{#    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">#}
-{#    				<div class="cart-total mb-3">#}
-{#    					<h3>Estimate shipping and tax</h3>#}
+    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>{% translate 'Shipping details' %}</h3>
 {#    					<p>Enter your destination to get a shipping estimate</p>#}
-{#  						<form action="#" class="info">#}
-{#	              <div class="form-group">#}
-{#	              	<label for="">Country</label>#}
-{#	                <input type="text" class="form-control text-left px-3" placeholder="">#}
-{#	              </div>#}
-{#	              <div class="form-group">#}
-{#	              	<label for="country">State/Province</label>#}
-{#	                <input type="text" class="form-control text-left px-3" placeholder="">#}
-{#	              </div>#}
-{#	              <div class="form-group">#}
-{#	              	<label for="country">Zip/Postal Code</label>#}
-{#	                <input type="text" class="form-control text-left px-3" placeholder="">#}
-{#	              </div>#}
-{#	            </form>#}
-{#    				</div>#}
+  						<form action="#" class="info">
+                          <div class="form-group">
+                            <label for="">{% translate 'Country' %}</label>
+                            <input type="text" class="form-control text-left px-3" placeholder="">
+                          </div>
+                          <div class="form-group">
+                            <label for="country">{% translate 'Region' %}</label>
+                            <input type="text" class="form-control text-left px-3" placeholder="">
+                          </div>
+                          <div class="form-group">
+                            <label for="country">{% translate 'Zip/Postal Code' %}</label>
+                            <input type="text" class="form-control text-left px-3" placeholder="">
+                          </div>
+                        </form>
+    				</div>
 {#    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>#}
-{#    			</div>#}
+    			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>{% translate 'Cart Totals' %}</h3>
@@ -104,10 +103,6 @@
     						<span>{% translate 'Subtotal' %}</span>
     						<span id="totals-sub"></span>
     					</p>
-{#    					<p class="d-flex">#}
-{#    						<span>Delivery</span>#}
-{#    						<span>$0.00</span>#}
-{#    					</p>#}
     					<p class="d-flex">
     						<span>{% translate 'Discount' %}</span>
     						<span>$0.00</span>

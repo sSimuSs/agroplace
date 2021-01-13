@@ -81,7 +81,7 @@
                         <div class="col-md-4">
                             <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end fadeInUp ftco-animated" style="background-image: url({{ cat.banner_image.url }});">
                                 <div class="text px-3 py-1">
-                                    <h2 class="mb-0"><a href="/category/{{ cat.id }}">{{ cat.name }}</a></h2>
+                                    <h2 class="mb-0"><a href="{% url 'category' pk=cat.id %}}">{{ cat.name }}</a></h2>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                 {% for prd in products %}
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="/product/{{ prd.id }}" class="img-prod"><img class="img-fluid" src="{{ prd.image.url }}" alt="{{ prd.name }}">
+    					<a href="{% url 'product' pk=prd.id %}" class="img-prod"><img class="img-fluid" src="{{ prd.image.url }}" alt="{{ prd.name }}">
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">{{ prd.name }}</a></h3>
@@ -116,7 +116,7 @@
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/product/{{ prd.id }}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="{% url 'product' pk=prd.id %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
     							</div>

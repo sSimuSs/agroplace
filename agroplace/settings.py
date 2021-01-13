@@ -25,7 +25,7 @@ SECRET_KEY = '=)-1^0=yxz!(3x=-zws!5j%5-w_@=%99hs2zby)dw@#@f425=8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.40', '127.0.0.1']
 
 
 # Application definition
@@ -145,6 +145,10 @@ LANGUAGES = [
   ('ru', _('Russian')),
   ('uz', _('Uzbek')),
 ]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'agroplace/locale'),
+)
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 

@@ -10,7 +10,7 @@
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb bg-white">
                         <li class="breadcrumb-item"><a href="{% url 'home' %}">{% translate 'Home' %}</a></li>
-                        <li class="breadcrumb-item"><a href="/category/{{ product.category.id }}">{{ product.category.name }}</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'category' pk=product.category.id %}">{{ product.category.name }}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{product.name}}</li>
                       </ol>
                     </nav>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="w-100"></div>
                             <div class="col-md-12">
-                                <p style="color: #000;">Minimum order: {{product.min_qty}} {{ product.get_measurement_display }}</p>
+                                <p style="color: #000;">{% translate 'Minimum order' %}: {{product.min_qty}} {{ product.get_measurement_display }}</p>
                             </div>
                         </div>
                         <p><button class="btn btn-black py-3 px-5">{% translate 'Add to Cart' %}</button></p>
@@ -84,7 +84,7 @@
     			{% for prd in related %}
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="/product/{{ prd.id }}" class="img-prod"><img class="img-fluid" src="{{ prd.image.url }}" alt="{{ prd.name }}">
+    					<a href="{% url 'product' pk=prd.id %}" class="img-prod"><img class="img-fluid" src="{{ prd.image.url }}" alt="{{ prd.name }}">
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">{{ prd.name }}</a></h3>
@@ -95,7 +95,7 @@
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/product/{{ prd.id }}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="{% url 'product' pk=prd.id %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
     							</div>

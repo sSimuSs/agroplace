@@ -2545,7 +2545,7 @@ input[type="button"].btn-block {
   float: left;
   min-width: 10rem;
   padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
+  /*margin: 0.125rem 0 0;*/
   font-size: 1rem;
   color: #212529;
   text-align: left;
@@ -8323,6 +8323,8 @@ h1, h2, h3, h4, h5,
     opacity: 0; } }
 
 .owl-carousel {
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
   position: relative; }
   .owl-carousel .owl-item {
     opacity: .4; }

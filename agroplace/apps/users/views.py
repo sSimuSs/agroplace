@@ -8,12 +8,12 @@ from .models import Users
 
 
 class RegisterForm(UserCreationForm):
-    first_name = forms.CharField(label="Name")
+    first_name = forms.CharField(label=_("Name"))
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Phone number must be entered in the format: '+9999999999'. Up to 15 digits allowed.")
-    phone = forms.CharField(validators=[phone_regex], max_length=17)  # validators should be a list
+    phone = forms.CharField(validators=[phone_regex], max_length=17, label=_('Phone'))  # validators should be a list
     # phone = forms.IntegerField()
-    email = forms.EmailField(required=False)
+    email = forms.EmailField(required=False, label=_('Email'))
 
     class Meta:
         model = Users

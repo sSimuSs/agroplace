@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <section class="ftco-section">
@@ -41,7 +42,7 @@
             {% else %}
                 <div class="col-md-12 ftco-animate">
                     <div class="alert alert-light" role="alert">
-                      В этой категории пока нету продуктов
+                      {% translate 'There is no any product in this category' %}
                     </div>
                 </div>
             {% endif %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block content %}
 <section class="ftco-section contact-section bg-light">
@@ -9,8 +10,8 @@
             <form action="#" class="bg-white p-5 contact-form" method="post">{% csrf_token %}
                 {{ form|crispy }}
               <div class="d-flex justify-content-between align-items-center">
-                  <a href="{% url 'register' %}" class="nav-link">Registering</a>
-                <input type="submit" value="Login" class="btn btn-primary py-3 px-5">
+                  <a href="{% url 'register' %}" class="nav-link">{% translate 'Registering' %}</a>
+                <input type="submit" value="{% translate 'Login' %}" class="btn btn-primary py-3 px-5">
               </div>
             </form>
 

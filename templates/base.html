@@ -47,14 +47,14 @@
 		    		<div class="row d-flex">
 		    			<div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
+						    <span class="text">+998 99 444 55 11</span>
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
+						    <span class="text">agroplace@inbox.ru</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+{#						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>#}
 					    </div>
 				    </div>
 			    </div>
@@ -73,7 +73,7 @@
 	          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">{% translate 'Home' %}</a></li>
             {% if user.is_authenticated %}
                 <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">{% translate 'Logout' %}</a></li>
-                <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+                <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart"></span>[{{ cart_count }}]</a></li>
             {% else %}
                 <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">{% translate 'Login' %}</a></li>
 	            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">{% translate 'Registration' %}</a></li>
@@ -103,7 +103,7 @@
         <div class="row d-flex justify-content-center py-5">
           <div class="col-md-6">
           	<h2 style="font-size: 22px;" class="mb-0">{% translate "Subcribe to our Newsletter" %}</h2>
-          	<span>Get e-mail updates about our latest shops and special offers</span>
+          	<span>{% translate 'Get e-mail updates about our latest shops and special offers' %}</span>
           </div>
           <div class="col-md-6 d-flex align-items-center">
             <form action="#" class="subscribe-form">
@@ -129,7 +129,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Agroplace</h2>
-              <p>Far far away, behind the word mountains, far from the Uzbekistan.</p>
+{#              <p>Far far away, behind the word mountains, far from the Uzbekistan.</p>#}
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -139,40 +139,42 @@
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Menu</h2>
+              <h2 class="ftco-heading-2">{% translate 'Menu' %}</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="#" class="py-2 d-block">{% translate 'Shop' %}</a></li>
+{#                <li><a href="#" class="py-2 d-block">{% translate 'About' %}</a></li>#}
+{#                <li><a href="#" class="py-2 d-block">{% translate 'Journal' %}</a></li>#}
+                <li><a href="#" class="py-2 d-block">{% translate 'Contact Us' %}</a></li>
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Help</h2>
-              <div class="d-flex">
-	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
-	              </ul>
-	              <ul class="list-unstyled">
-	                <li><a href="#" class="py-2 d-block">FAQs</a></li>
-	                <li><a href="#" class="py-2 d-block">Contact</a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
+{#          <div class="col-md-4">#}
+{#             <div class="ftco-footer-widget mb-4">#}
+{#              <h2 class="ftco-heading-2">Help</h2>#}
+{#              <div class="d-flex">#}
+{#	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">#}
+{#	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>#}
+{#	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>#}
+{#	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>#}
+{#	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>#}
+{#	              </ul>#}
+{#	              <ul class="list-unstyled">#}
+{#	                <li><a href="#" class="py-2 d-block">FAQs</a></li>#}
+{#	                <li><a href="#" class="py-2 d-block">Contact</a></li>#}
+{#	              </ul>#}
+{#	            </div>#}
+{#            </div>#}
+{#          </div>#}
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">{% translate 'Have a Questions?' %}</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">
+                        {% translate '26, Saxovat street, Karshi, Kashkadarya region, Uzbekistan' %}
+                    </span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+998 99 444 55 11</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">agroplace@inbox.ru</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -181,7 +183,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> {% translate 'All rights reserved' %}. OOO "AGROPLACE"</p>
           </div>
         </div>
       </div>
@@ -190,7 +192,10 @@
 
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
+  </svg></div>
 
 
   <script src="{% static 'js/jquery.min.js'%}"></script>

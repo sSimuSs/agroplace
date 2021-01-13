@@ -33,5 +33,8 @@ class Cart(models.Model):
     user = models.ForeignKey('users.Users', on_delete=models.CASCADE)
     product = models.ForeignKey('products.Products', on_delete=models.CASCADE)
     qty = models.PositiveIntegerField(default=1)
-    cost = models.FloatField()
+    # cost = models.FloatField()
     date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = [['user', 'product']]

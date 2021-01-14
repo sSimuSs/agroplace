@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.translation import gettext_lazy as _
+
 from .models import Products, Categories
 from agroplace.apps.orders.models import Cart
 
@@ -27,12 +29,18 @@ def product(request, pk):
     return render(request, 'pages/product.html', locals())
 
 
-def category(request, pk):
+def category(request, pk=None):
     if request.user.is_authenticated:
         cart_count = Cart.objects.filter(user=request.user).count()
 
     main_cats = Categories.objects.filter(status=True)
-    category = get_object_or_404(Categories, id=pk)
-    products = Products.objects.filter(status=1, category=category)
-    page_title = category.name
+    if pk:
+        category = get_object_or_404(Categories, id=pk)
+        products = Products.objects.filter(status=1, category=category)
+        page_title = category.name
+    else:
+        category = None
+        products = Products.objects.filter(status=1)
+        page_title = _("Our products")
+
     return render(request, 'pages/category.html', locals())

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-13 17:46+0500\n"
-"PO-Revision-Date: 2021-01-13 17:46+0500\n"
+"POT-Creation-Date: 2021-01-14 12:36+0500\n"
+"PO-Revision-Date: 2021-01-14 12:40+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -88,6 +88,10 @@ msgstr "Русский"
 msgid "Uzbek"
 msgstr "Узбекский"
 
+#: templates/base.html:68 templates/base.html:142
+msgid "Menu"
+msgstr "Меню"
+
 #: templates/base.html:73 templates/pages/product.html:12
 msgid "Home"
 msgstr "Главная"
@@ -119,10 +123,6 @@ msgstr "Введите адрес электронной почты"
 msgid "Subscribe"
 msgstr "Подписаться"
 
-#: templates/base.html:142
-msgid "Menu"
-msgstr "Меню"
-
 #: templates/base.html:144
 msgid "Shop"
 msgstr "Магазин"
@@ -143,55 +143,55 @@ msgstr "Узбекистан, Кашкадарьинская область, г�
 msgid "All rights reserved"
 msgstr "Все права защищены"
 
-#: templates/pages/cart.html:16
+#: templates/pages/cart.html:15
 msgid "Product name"
 msgstr "Название продукта"
 
-#: templates/pages/cart.html:17
+#: templates/pages/cart.html:16
 msgid "Price"
 msgstr "Цена"
 
-#: templates/pages/cart.html:18
+#: templates/pages/cart.html:17
 msgid "Quantity"
 msgstr "Количество"
 
-#: templates/pages/cart.html:19 templates/pages/cart.html:113
+#: templates/pages/cart.html:18 templates/pages/cart.html:112
 msgid "Total"
 msgstr "Всего"
 
-#: templates/pages/cart.html:65
+#: templates/pages/cart.html:64
 msgid "There is no products in your cart"
 msgstr "В вашей корзине нет товаров"
 
-#: templates/pages/cart.html:81
+#: templates/pages/cart.html:80
 msgid "Shipping details"
 msgstr "Сведения о доставке"
 
-#: templates/pages/cart.html:85
+#: templates/pages/cart.html:84
 msgid "Country"
 msgstr "Страна"
 
-#: templates/pages/cart.html:89
+#: templates/pages/cart.html:88
 msgid "Region"
 msgstr "Район, область"
 
-#: templates/pages/cart.html:93
+#: templates/pages/cart.html:92
 msgid "Zip/Postal Code"
 msgstr "Индекс почты"
 
-#: templates/pages/cart.html:102
+#: templates/pages/cart.html:101
 msgid "Cart Totals"
 msgstr "Итоги корзины"
 
-#: templates/pages/cart.html:104
+#: templates/pages/cart.html:103
 msgid "Subtotal"
 msgstr "Промежуточный итог"
 
-#: templates/pages/cart.html:108
+#: templates/pages/cart.html:107
 msgid "Discount"
 msgstr "Скидка"
 
-#: templates/pages/cart.html:119
+#: templates/pages/cart.html:118
 msgid "Proceed to Checkout"
 msgstr "Оформить заказ"
 
@@ -202,6 +202,30 @@ msgstr "В этой категории нет товаров"
 #: templates/pages/home.html:16
 msgid "View Details"
 msgstr "Подробнее"
+
+#: templates/pages/home.html:46
+msgid "Always Fresh"
+msgstr "Всегда свежий"
+
+#: templates/pages/home.html:47
+msgid "Product well package"
+msgstr "Продукт хорошо упакован"
+
+#: templates/pages/home.html:57
+msgid "Superior Quality"
+msgstr "Высокое качество"
+
+#: templates/pages/home.html:58
+msgid "Quality Products"
+msgstr "Качественная продукция"
+
+#: templates/pages/home.html:68
+msgid "Support"
+msgstr "Поддержка"
+
+#: templates/pages/home.html:69
+msgid "24/7 Support"
+msgstr "Поддержка 24/7"
 
 #: templates/pages/home.html:97
 msgid "Featured Products"

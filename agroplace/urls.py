@@ -23,6 +23,7 @@ urlpatterns = i18n_patterns(
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^cart/$', cart, name='cart'),
     url(r'^product/(?P<pk>\d+)/$', product, name='product'),
+    url(r'^category/$', category, name='category_all'),
     url(r'^category/(?P<pk>\d+)/$', category, name='category'),
     url(r'^$', home, name='home'),
     prefix_default_language=False

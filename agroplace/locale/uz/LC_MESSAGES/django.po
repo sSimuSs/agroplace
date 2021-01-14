@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-13 17:46+0500\n"
+"POT-Creation-Date: 2021-01-14 12:36+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,6 +86,10 @@ msgstr ""
 msgid "Uzbek"
 msgstr ""
 
+#: templates/base.html:68 templates/base.html:142
+msgid "Menu"
+msgstr ""
+
 #: templates/base.html:73 templates/pages/product.html:12
 msgid "Home"
 msgstr ""
@@ -115,10 +119,6 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
-#: templates/base.html:142
-msgid "Menu"
-msgstr ""
-
 #: templates/base.html:144
 msgid "Shop"
 msgstr ""
@@ -139,55 +139,55 @@ msgstr ""
 msgid "All rights reserved"
 msgstr ""
 
-#: templates/pages/cart.html:16
+#: templates/pages/cart.html:15
 msgid "Product name"
 msgstr ""
 
-#: templates/pages/cart.html:17
+#: templates/pages/cart.html:16
 msgid "Price"
 msgstr ""
 
-#: templates/pages/cart.html:18
+#: templates/pages/cart.html:17
 msgid "Quantity"
 msgstr ""
 
-#: templates/pages/cart.html:19 templates/pages/cart.html:113
+#: templates/pages/cart.html:18 templates/pages/cart.html:112
 msgid "Total"
 msgstr ""
 
-#: templates/pages/cart.html:65
+#: templates/pages/cart.html:64
 msgid "There is no products in your cart"
 msgstr ""
 
-#: templates/pages/cart.html:81
+#: templates/pages/cart.html:80
 msgid "Shipping details"
 msgstr ""
 
-#: templates/pages/cart.html:85
+#: templates/pages/cart.html:84
 msgid "Country"
 msgstr ""
 
-#: templates/pages/cart.html:89
+#: templates/pages/cart.html:88
 msgid "Region"
 msgstr ""
 
-#: templates/pages/cart.html:93
+#: templates/pages/cart.html:92
 msgid "Zip/Postal Code"
 msgstr ""
 
-#: templates/pages/cart.html:102
+#: templates/pages/cart.html:101
 msgid "Cart Totals"
 msgstr ""
 
-#: templates/pages/cart.html:104
+#: templates/pages/cart.html:103
 msgid "Subtotal"
 msgstr ""
 
-#: templates/pages/cart.html:108
+#: templates/pages/cart.html:107
 msgid "Discount"
 msgstr ""
 
-#: templates/pages/cart.html:119
+#: templates/pages/cart.html:118
 msgid "Proceed to Checkout"
 msgstr ""
 
@@ -197,6 +197,30 @@ msgstr ""
 
 #: templates/pages/home.html:16
 msgid "View Details"
+msgstr ""
+
+#: templates/pages/home.html:46
+msgid "Always Fresh"
+msgstr ""
+
+#: templates/pages/home.html:47
+msgid "Product well package"
+msgstr ""
+
+#: templates/pages/home.html:57
+msgid "Superior Quality"
+msgstr ""
+
+#: templates/pages/home.html:58
+msgid "Quality Products"
+msgstr ""
+
+#: templates/pages/home.html:68
+msgid "Support"
+msgstr ""
+
+#: templates/pages/home.html:69
+msgid "24/7 Support"
 msgstr ""
 
 #: templates/pages/home.html:97

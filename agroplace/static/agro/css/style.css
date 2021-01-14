@@ -8323,8 +8323,6 @@ h1, h2, h3, h4, h5,
     opacity: 0; } }
 
 .owl-carousel {
-  -ms-touch-action: pan-x;
-  touch-action: pan-x;
   position: relative; }
   .owl-carousel .owl-item {
     opacity: .4; }
@@ -10013,3 +10011,8 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+.owl-carousel .owl-stage, .owl-carousel.owl-drag .owl-item{
+    -ms-touch-action: auto;
+        touch-action: auto;
+}

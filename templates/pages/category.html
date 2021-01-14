@@ -7,9 +7,9 @@
     		<div class="row justify-content-center">
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
-{#    					<li><a href="/category/" class="active">All</a></li>#}
+    					<li><a href="{% url 'category_all' %}" {% if not category %}class="active"{% endif %}>{% translate 'All' %}</a></li>
                         {% for cat in main_cats %}
-    					    <li><a href="{% url 'category' pk=cat.id %}" {% if category.id == cat.id %}class="active"{% endif %}>{{cat.name}}</a></li>
+    					    <li><a href="{% url 'category' pk=cat.id %}" {% if category and category.id == cat.id %}class="active"{% endif %}>{{cat.name}}</a></li>
                         {% endfor %}
     				</ul>
     			</div>

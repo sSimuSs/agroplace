@@ -74,57 +74,60 @@
     		</div>
             {% if cart|length != 0 %}
     		<div class="row">
+                <form action="#" class="col-lg-12 make_offer_form" style="position: relative" method="post">{% csrf_token %}
+                    <div class="row">
+                    <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                        <div class="cart-total mb-3">
+                            <h3>{% translate 'Shipping details' %}</h3>
+                              {{ order_form|crispy }}
 
-    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>{% translate 'Shipping details' %}</h3>
-{#    					<p>Enter your destination to get a shipping estimate</p>#}
-  						<form action="#" class="info">
-                          <div class="form-group">
-                            <label for="">{% translate 'Country' %}</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="">
-                          </div>
-                          <div class="form-group">
-                            <label for="country">{% translate 'Region' %}</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="">
-                          </div>
-                          <div class="form-group">
-                            <label for="country">{% translate 'Zip/Postal Code' %}</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="">
-                          </div>
-                        </form>
-    				</div>
-{#    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>#}
-    			</div>
-    			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>{% translate 'Cart Totals' %}</h3>
-    					<p class="d-flex">
-    						<span>{% translate 'Subtotal' %}</span>
-    						<span id="totals-sub"></span>
-    					</p>
-    					<p class="d-flex">
-    						<span>{% translate 'Discount' %}</span>
-    						<span>$0.00</span>
-    					</p>
-    					<hr>
-    					<p class="d-flex total-price">
-    						<span>{% translate 'Total' %}</span>
-    						<span id="totals-total"></span>
-    					</p>
-    				</div>
-    				<p>
-                        <a href="checkout.html" class="btn btn-primary py-3 px-4">
-                            {% translate 'Proceed to Checkout' %}
-                        </a>
-                    </p>
-    			</div>
+                        </div>
+    {#    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>#}
+                    </div>
+                    <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                        <div class="cart-total mb-3">
+                            <h3>{% translate 'Cart Totals' %}</h3>
+                            <p class="d-flex">
+                                <span>{% translate 'Subtotal' %}</span>
+                                <span id="totals-sub"></span>
+                            </p>
+                            <p class="d-flex">
+                                <span>{% translate 'Discount' %}</span>
+                                <span>$0.00</span>
+                            </p>
+                            <hr>
+                            <p class="d-flex total-price">
+                                <span>{% translate 'Total' %}</span>
+                                <span id="totals-total"></span>
+                            </p>
+                        </div>
+                        <p>
+                            <button class="btn btn-primary py-3 px-4">
+                                {% translate 'Proceed to Checkout' %}
+                            </button>
+                        </p>
+                    </div>
+                    </div>
+                </form>
     		</div>
             {% endif %}
 			</div>
 		</section>
 {% endblock %}
-
+{% block mycss %}
+    <style>
+        .make_offer_form .form-group .form-control {
+            padding: 5px;
+            text-align: left;
+        }
+        .make_offer_form button{
+            color: #fff !important;
+        }
+        .make_offer_form button:hover{
+            color: #82ae46 !important;
+        }
+    </style>
+{% endblock %}
 {% block myjs %}
     <script>
         function calcTotals(){

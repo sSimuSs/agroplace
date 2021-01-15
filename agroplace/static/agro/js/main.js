@@ -340,6 +340,10 @@
 
 }
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 setInterval(function() { makeTimer(); }, 1000);
 
 

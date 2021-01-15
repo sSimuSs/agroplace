@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+{% load i18n %}
+{% block content %}
+<section class="ftco-section ftco-cart ftco-no-pt">
+			<div class="container">
+				<div class="row">
+    			<div class="col-md-12 ftco-animate">
+                    <h3 class="text-center pt-1">{% translate 'My orders' %}</h3>
+    				<div class="cart-list">
+	    				<table class="table">
+						    <thead class="thead-primary">
+						      <tr class="text-center">
+						        <th>{% translate 'Order ID' %}</th>
+						        <th>{% translate 'Products' %}</th>
+						        <th>{% translate 'Date' %}</th>
+						        <th>{% translate 'Status' %}</th>
+						        <th>{% translate 'Price' %}</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+                            {% if user_orders|length != 0 %}
+                                {% for o in user_orders %}
+                                  <tr class="text-center">
+{#                                    <td class="product-remove"><a href="?delete={{ c.product_id }}"><span class="ion-ios-close"></span></a></td>#}
+                                    <td class="product-remove">{{ o.id }}</td>
+                                    <td class="price">
+                                        {% for pr in o.products %}
+                                            <img src="{{ pr.product.image.url }}" alt="" width="70px">
+                                            {{ pr.name }} - ${{ pr.cost }}
+                                            <span class="text-muted ">/{{ pr.product.get_measurement_display|lower }}</span>, {{ pr.qty }}<br>
+                                        {% endfor %}
+                                    </td>
+                                  <td class="quantity">
+                                      <span data-toggle="tooltip" data-placement="top" title="{{ o.date }}">{{ o.date|naturaltime }}</span>
+                                  </td>
+
+                                    <td class="price">
+                                        {{ o.get_status_display }}<br>
+                                        {% if o.status == 0 %}
+                                            <a href="#" class="btn btn-warning">{% translate 'Make a payment' %}</a>
+                                        {% endif %}
+                                    </td>
+
+                                    <td class="total total_cost">
+                                        ${{ o.total_cost }}
+                                    </td>
+                                  </tr><!-- END TR-->
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                <td colspan="6">
+                                    {% translate "You haven't made any orders yet" %}
+                                </td>
+                                </tr>
+                            {% endif %}
+
+
+						    </tbody>
+						  </table>
+					  </div>
+    			</div>
+    		</div>
+			</div>
+		</section>
+{% endblock %}

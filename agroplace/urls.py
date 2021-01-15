@@ -7,7 +7,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.urls import path
 from agroplace.apps.system.views import home
 from agroplace.apps.users.views import register, login
-from agroplace.apps.orders.views import cart
+from agroplace.apps.orders.views import cart, orders
 from agroplace.apps.products.views import product, category
 
 admin.autodiscover()
@@ -22,6 +22,7 @@ urlpatterns = i18n_patterns(
     url(r'^login/$', login, name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^cart/$', cart, name='cart'),
+    url(r'^orders/$', orders, name='orders'),
     url(r'^product/(?P<pk>\d+)/$', product, name='product'),
     url(r'^category/$', category, name='category_all'),
     url(r'^category/(?P<pk>\d+)/$', category, name='category'),

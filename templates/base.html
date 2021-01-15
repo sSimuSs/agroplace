@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
     <link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    {% block mycss %}
+    {% endblock %}
   </head>
   <body class="goto-here">
 {#		<div class="py-1 bg-primary">#}
@@ -74,6 +76,7 @@
             {% if user.is_authenticated %}
                 <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">{% translate 'Logout' %}</a></li>
                 <li class="nav-item cta cta-colored"><a href="{% url 'cart' %}" class="nav-link"><span class="icon-shopping_cart"></span>[{{ cart_count }}]</a></li>
+                <li class="nav-item"><a href="{% url 'orders' %}" class="nav-link">{% translate 'My orders' %}</a></li>
             {% else %}
                 <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">{% translate 'Login' %}</a></li>
 	            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">{% translate 'Registration' %}</a></li>

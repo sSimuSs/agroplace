@@ -3,44 +3,77 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 12:36+0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2021-01-15 12:51+0500\n"
+"PO-Revision-Date: 2021-01-15 15:02+0500\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: agroplace/apps/orders/models.py:8
+msgid "Error on payment"
+msgstr "To`lovda xatolik"
+
+#: agroplace/apps/orders/models.py:9
+msgid "Awaiting payment"
+msgstr "To`lov kutilmoqda"
+
+#: agroplace/apps/orders/models.py:10
+msgid "In process"
+msgstr "Jarayonda"
+
+#: agroplace/apps/orders/models.py:11
+msgid "Handed over to the courier"
+msgstr "Kuryerga topshirildi"
+
+#: agroplace/apps/orders/models.py:12
+msgid "Delivered"
+msgstr "Yetkazib berildi"
+
+#: agroplace/apps/orders/views.py:58
+msgid "Cart"
+msgstr "Savat"
+
+#: agroplace/apps/orders/views.py:66 templates/base.html:78
+#: templates/pages/orders.html:10
+msgid "My orders"
+msgstr "Mening xardilarim"
 
 #: agroplace/apps/products/models.py:31
 msgid "Peace"
-msgstr ""
+msgstr "Dona"
 
 #: agroplace/apps/products/models.py:32
 msgid "Kilogram"
-msgstr ""
+msgstr "Kilogram"
 
 #: agroplace/apps/products/models.py:33
 msgid "Tonne"
-msgstr ""
+msgstr "Tonna"
 
 #: agroplace/apps/products/models.py:34
 msgid "Liter"
-msgstr ""
+msgstr "Litr"
 
 #: agroplace/apps/products/models.py:35
 msgid "Bag"
-msgstr ""
+msgstr "Qop"
+
+#: agroplace/apps/products/views.py:44
+msgid "Our products"
+msgstr "Bizning mahsulotlarimiz"
 
 #: agroplace/apps/users/admin.py:11
 msgid "Personal info"
-msgstr ""
+msgstr "Shaxsiy ma`lumotlar"
 
 #: agroplace/apps/users/admin.py:12
 msgid "Permissions"
@@ -52,217 +85,229 @@ msgstr ""
 
 #: agroplace/apps/users/models.py:9 agroplace/apps/users/views.py:14
 msgid "Phone"
-msgstr ""
+msgstr "Telefon raqam"
 
 #: agroplace/apps/users/models.py:10 agroplace/apps/users/views.py:16
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: agroplace/apps/users/models.py:11
 msgid "Address"
-msgstr ""
+msgstr "Manzil"
 
 #: agroplace/apps/users/views.py:11
 msgid "Name"
-msgstr ""
+msgstr "Ism"
 
-#: agroplace/apps/users/views.py:32 templates/base.html:79
+#: agroplace/apps/users/views.py:32 templates/base.html:82
 msgid "Registration"
-msgstr ""
+msgstr "Ro`yhatdan o`tish"
 
 #: agroplace/apps/users/views.py:48
 msgid "Authorization"
 msgstr ""
 
-#: agroplace/settings.py:144
-msgid "English"
-msgstr ""
-
 #: agroplace/settings.py:145
-msgid "Russian"
-msgstr ""
+msgid "English"
+msgstr "Ingliz tili"
 
 #: agroplace/settings.py:146
+msgid "Russian"
+msgstr "Rus tili"
+
+#: agroplace/settings.py:147
 msgid "Uzbek"
-msgstr ""
+msgstr "O’zbek tili"
 
-#: templates/base.html:68 templates/base.html:142
+#: templates/base.html:70 templates/base.html:145
 msgid "Menu"
-msgstr ""
+msgstr "Menyu"
 
-#: templates/base.html:73 templates/pages/product.html:12
+#: templates/base.html:75 templates/pages/product.html:12
 msgid "Home"
-msgstr ""
+msgstr "Bosh sahifa"
 
-#: templates/base.html:75
+#: templates/base.html:77
 msgid "Logout"
-msgstr ""
+msgstr "Chiqish"
 
-#: templates/base.html:78 templates/pages/login.html:14
+#: templates/base.html:81 templates/pages/login.html:14
 #: templates/pages/register.html:13
 msgid "Login"
-msgstr ""
+msgstr "Kirish"
 
-#: templates/base.html:105
+#: templates/base.html:108
 msgid "Subcribe to our Newsletter"
-msgstr ""
+msgstr "Bizning yangiliklarga obuna bo`ling"
 
-#: templates/base.html:106
+#: templates/base.html:109
 msgid "Get e-mail updates about our latest shops and special offers"
-msgstr ""
+msgstr "Bizning so’nggi o`zgarishlarimiz va maxsus takliflarimiz haqida elektron pochtangizga xabarlar oling"
 
-#: templates/base.html:111
+#: templates/base.html:114
 msgid "Enter email address"
-msgstr ""
+msgstr "Elektron pochtangizni kiriting"
 
-#: templates/base.html:112
+#: templates/base.html:115
 msgid "Subscribe"
-msgstr ""
-
-#: templates/base.html:144
-msgid "Shop"
-msgstr ""
+msgstr "Obuna bo`lish"
 
 #: templates/base.html:147
+msgid "Shop"
+msgstr "Do`kon"
+
+#: templates/base.html:150
 msgid "Contact Us"
-msgstr ""
+msgstr "Bog`lanish"
 
-#: templates/base.html:170
+#: templates/base.html:173
 msgid "Have a Questions?"
-msgstr ""
+msgstr "Savollaringiz bormi?"
 
-#: templates/base.html:174
+#: templates/base.html:177
 msgid "26, Saxovat street, Karshi, Kashkadarya region, Uzbekistan"
-msgstr ""
+msgstr "O`zbekiston, Qashqadaryo viloyati, Qarshi, Saxovat ko`chasi, 26"
 
-#: templates/base.html:186
+#: templates/base.html:193
 msgid "All rights reserved"
-msgstr ""
+msgstr "Barcha huquqlar himoyalangan"
 
 #: templates/pages/cart.html:15
 msgid "Product name"
-msgstr ""
+msgstr "Mahsulot nomi"
 
-#: templates/pages/cart.html:16
+#: templates/pages/cart.html:16 templates/pages/orders.html:19
 msgid "Price"
-msgstr ""
+msgstr "Narhi"
 
 #: templates/pages/cart.html:17
 msgid "Quantity"
-msgstr ""
+msgstr "Qiymati"
 
-#: templates/pages/cart.html:18 templates/pages/cart.html:112
+#: templates/pages/cart.html:18 templates/pages/cart.html:100
 msgid "Total"
-msgstr ""
+msgstr "Umumiy"
 
 #: templates/pages/cart.html:64
 msgid "There is no products in your cart"
-msgstr ""
+msgstr "Savatingizda mahsulotlar topilmadi"
 
-#: templates/pages/cart.html:80
+#: templates/pages/cart.html:81
 msgid "Shipping details"
-msgstr ""
+msgstr "Yetkazib berish ma`lumotlari"
 
-#: templates/pages/cart.html:84
-msgid "Country"
-msgstr ""
-
-#: templates/pages/cart.html:88
-msgid "Region"
-msgstr ""
-
-#: templates/pages/cart.html:92
-msgid "Zip/Postal Code"
-msgstr ""
-
-#: templates/pages/cart.html:101
+#: templates/pages/cart.html:89
 msgid "Cart Totals"
-msgstr ""
+msgstr "Savat umumiy narhi"
 
-#: templates/pages/cart.html:103
+#: templates/pages/cart.html:91
 msgid "Subtotal"
-msgstr ""
+msgstr "Jami"
 
-#: templates/pages/cart.html:107
+#: templates/pages/cart.html:95
 msgid "Discount"
-msgstr ""
+msgstr "Chegirmalar"
 
-#: templates/pages/cart.html:118
+#: templates/pages/cart.html:106
 msgid "Proceed to Checkout"
-msgstr ""
+msgstr "Xaridni amalga oshirish"
+
+#: templates/pages/category.html:10
+msgid "All"
+msgstr "Barchasi"
 
 #: templates/pages/category.html:45
 msgid "There is no any product in this category"
-msgstr ""
+msgstr "Ushbu kategoriyada hech qanday mahsulot yo’q"
 
 #: templates/pages/home.html:16
 msgid "View Details"
-msgstr ""
+msgstr "Batafsil"
 
 #: templates/pages/home.html:46
 msgid "Always Fresh"
-msgstr ""
+msgstr "Har doim yangi"
 
 #: templates/pages/home.html:47
 msgid "Product well package"
-msgstr ""
+msgstr "Ishonchli qadoq"
 
 #: templates/pages/home.html:57
 msgid "Superior Quality"
-msgstr ""
+msgstr "Yuqori sifat"
 
 #: templates/pages/home.html:58
 msgid "Quality Products"
-msgstr ""
+msgstr "Sifatli mahsulotlar"
 
 #: templates/pages/home.html:68
 msgid "Support"
-msgstr ""
+msgstr "Yordam"
 
 #: templates/pages/home.html:69
 msgid "24/7 Support"
-msgstr ""
+msgstr "24/7 yordam"
 
-#: templates/pages/home.html:97
+#: templates/pages/home.html:99
 msgid "Featured Products"
-msgstr ""
+msgstr "Tanlangan mahsulotlar"
 
-#: templates/pages/home.html:98
+#: templates/pages/home.html:100
 msgid "Our Products"
-msgstr ""
+msgstr "Bizning mahsulotlar"
 
 #: templates/pages/login.html:13
 msgid "Registering"
-msgstr ""
+msgstr "Ro`yhatdan o`tish"
+
+#: templates/pages/orders.html:15
+msgid "Order ID"
+msgstr "Xarid IDsi"
+
+#: templates/pages/orders.html:16 templates/pages/product.html:76
+msgid "Products"
+msgstr "Mahsulotlar"
+
+#: templates/pages/orders.html:17
+msgid "Date"
+msgstr "Sana"
+
+#: templates/pages/orders.html:18
+msgid "Status"
+msgstr "Status"
+
+#: templates/pages/orders.html:41
+msgid "Make a payment"
+msgstr "To`lovni amalga oshirish"
+
+#: templates/pages/orders.html:53
+msgid "You haven't made any orders yet"
+msgstr "Siz hali xaridlarni amalga oshirmadingiz"
 
 #: templates/pages/product.html:25
 msgid "In stock"
-msgstr ""
+msgstr "Mavjud"
 
 #: templates/pages/product.html:54
 msgid "Minimum order"
-msgstr ""
+msgstr "Minimum xarid miqdori"
 
 #: templates/pages/product.html:57
 msgid "Add to Cart"
-msgstr ""
+msgstr "Savatga qo`shish"
 
 #: templates/pages/product.html:60
 msgid "Product added to cart."
-msgstr ""
+msgstr "Mahsulot savatga qo`shildi."
 
 #: templates/pages/product.html:60
 msgid "Go to the cart"
-msgstr ""
-
-#: templates/pages/product.html:76
-msgid "Products"
-msgstr ""
+msgstr "Savatga o`tish"
 
 #: templates/pages/product.html:77
 msgid "Related Products"
-msgstr ""
+msgstr "O`xshash mahsulotlar"
 
 #: templates/pages/register.html:14
 msgid "Register"
-msgstr ""
+msgstr "Ro`yhatdan o`tish"

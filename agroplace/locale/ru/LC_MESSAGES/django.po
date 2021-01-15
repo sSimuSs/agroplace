@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 12:36+0500\n"
-"PO-Revision-Date: 2021-01-14 12:40+0500\n"
+"POT-Creation-Date: 2021-01-15 12:51+0500\n"
+"PO-Revision-Date: 2021-01-15 12:54+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -19,6 +19,35 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Poedit 2.4.2\n"
+
+#: agroplace/apps/orders/models.py:8
+msgid "Error on payment"
+msgstr "Ошибка при оплате"
+
+#: agroplace/apps/orders/models.py:9
+msgid "Awaiting payment"
+msgstr "Ожидание оплаты"
+
+#: agroplace/apps/orders/models.py:10
+msgid "In process"
+msgstr "В процессе"
+
+#: agroplace/apps/orders/models.py:11
+msgid "Handed over to the courier"
+msgstr "Передан курьеру"
+
+#: agroplace/apps/orders/models.py:12
+msgid "Delivered"
+msgstr "Доставлено"
+
+#: agroplace/apps/orders/views.py:58
+msgid "Cart"
+msgstr "Корзина"
+
+#: agroplace/apps/orders/views.py:66 templates/base.html:78
+#: templates/pages/orders.html:10
+msgid "My orders"
+msgstr "Мои заказы"
 
 #: agroplace/apps/products/models.py:31
 msgid "Peace"
@@ -39,6 +68,10 @@ msgstr "Литр"
 #: agroplace/apps/products/models.py:35
 msgid "Bag"
 msgstr "Мешок"
+
+#: agroplace/apps/products/views.py:44
+msgid "Our products"
+msgstr "Наши продукты"
 
 #: agroplace/apps/users/admin.py:11
 msgid "Personal info"
@@ -68,7 +101,7 @@ msgstr "Адрес"
 msgid "Name"
 msgstr "Имя"
 
-#: agroplace/apps/users/views.py:32 templates/base.html:79
+#: agroplace/apps/users/views.py:32 templates/base.html:82
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -76,70 +109,70 @@ msgstr "Регистрация"
 msgid "Authorization"
 msgstr "Авторизация"
 
-#: agroplace/settings.py:144
+#: agroplace/settings.py:145
 msgid "English"
 msgstr "Английский"
 
-#: agroplace/settings.py:145
+#: agroplace/settings.py:146
 msgid "Russian"
 msgstr "Русский"
 
-#: agroplace/settings.py:146
+#: agroplace/settings.py:147
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: templates/base.html:68 templates/base.html:142
+#: templates/base.html:70 templates/base.html:145
 msgid "Menu"
 msgstr "Меню"
 
-#: templates/base.html:73 templates/pages/product.html:12
+#: templates/base.html:75 templates/pages/product.html:12
 msgid "Home"
 msgstr "Главная"
 
-#: templates/base.html:75
+#: templates/base.html:77
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:78 templates/pages/login.html:14
+#: templates/base.html:81 templates/pages/login.html:14
 #: templates/pages/register.html:13
 msgid "Login"
 msgstr "Войти"
 
-#: templates/base.html:105
+#: templates/base.html:108
 msgid "Subcribe to our Newsletter"
 msgstr "Подпишитесь на нашу рассылку"
 
-#: templates/base.html:106
+#: templates/base.html:109
 msgid "Get e-mail updates about our latest shops and special offers"
 msgstr ""
 "Получайте по электронной почте обновления о наших последних изменений и "
 "специальных предложениях"
 
-#: templates/base.html:111
+#: templates/base.html:114
 msgid "Enter email address"
 msgstr "Введите адрес электронной почты"
 
-#: templates/base.html:112
+#: templates/base.html:115
 msgid "Subscribe"
 msgstr "Подписаться"
 
-#: templates/base.html:144
+#: templates/base.html:147
 msgid "Shop"
 msgstr "Магазин"
 
-#: templates/base.html:147
+#: templates/base.html:150
 msgid "Contact Us"
 msgstr "Связаться"
 
-#: templates/base.html:170
+#: templates/base.html:173
 msgid "Have a Questions?"
 msgstr "Есть вопросы?"
 
-#: templates/base.html:174
+#: templates/base.html:177
 msgid "26, Saxovat street, Karshi, Kashkadarya region, Uzbekistan"
 msgstr "Узбекистан, Кашкадарьинская область, город Карши, ул. Саховат, дом 26"
 
-#: templates/base.html:186
+#: templates/base.html:193
 msgid "All rights reserved"
 msgstr "Все права защищены"
 
@@ -147,7 +180,7 @@ msgstr "Все права защищены"
 msgid "Product name"
 msgstr "Название продукта"
 
-#: templates/pages/cart.html:16
+#: templates/pages/cart.html:16 templates/pages/orders.html:19
 msgid "Price"
 msgstr "Цена"
 
@@ -155,7 +188,7 @@ msgstr "Цена"
 msgid "Quantity"
 msgstr "Количество"
 
-#: templates/pages/cart.html:18 templates/pages/cart.html:112
+#: templates/pages/cart.html:18 templates/pages/cart.html:100
 msgid "Total"
 msgstr "Всего"
 
@@ -163,37 +196,29 @@ msgstr "Всего"
 msgid "There is no products in your cart"
 msgstr "В вашей корзине нет товаров"
 
-#: templates/pages/cart.html:80
+#: templates/pages/cart.html:81
 msgid "Shipping details"
 msgstr "Сведения о доставке"
 
-#: templates/pages/cart.html:84
-msgid "Country"
-msgstr "Страна"
-
-#: templates/pages/cart.html:88
-msgid "Region"
-msgstr "Район, область"
-
-#: templates/pages/cart.html:92
-msgid "Zip/Postal Code"
-msgstr "Индекс почты"
-
-#: templates/pages/cart.html:101
+#: templates/pages/cart.html:89
 msgid "Cart Totals"
 msgstr "Итоги корзины"
 
-#: templates/pages/cart.html:103
+#: templates/pages/cart.html:91
 msgid "Subtotal"
 msgstr "Промежуточный итог"
 
-#: templates/pages/cart.html:107
+#: templates/pages/cart.html:95
 msgid "Discount"
 msgstr "Скидка"
 
-#: templates/pages/cart.html:118
+#: templates/pages/cart.html:106
 msgid "Proceed to Checkout"
 msgstr "Оформить заказ"
+
+#: templates/pages/category.html:10
+msgid "All"
+msgstr "Все"
 
 #: templates/pages/category.html:45
 msgid "There is no any product in this category"
@@ -227,17 +252,41 @@ msgstr "Поддержка"
 msgid "24/7 Support"
 msgstr "Поддержка 24/7"
 
-#: templates/pages/home.html:97
+#: templates/pages/home.html:99
 msgid "Featured Products"
 msgstr "Рекомендуемые товары"
 
-#: templates/pages/home.html:98
+#: templates/pages/home.html:100
 msgid "Our Products"
 msgstr "Наши продукты"
 
 #: templates/pages/login.html:13
 msgid "Registering"
 msgstr "Регистрация"
+
+#: templates/pages/orders.html:15
+msgid "Order ID"
+msgstr "ID заказа"
+
+#: templates/pages/orders.html:16 templates/pages/product.html:76
+msgid "Products"
+msgstr "Товары"
+
+#: templates/pages/orders.html:17
+msgid "Date"
+msgstr "Дата"
+
+#: templates/pages/orders.html:18
+msgid "Status"
+msgstr "Статус"
+
+#: templates/pages/orders.html:41
+msgid "Make a payment"
+msgstr "Перейти к оплате"
+
+#: templates/pages/orders.html:53
+msgid "You haven't made any orders yet"
+msgstr "Вы еще не сделали заказов"
 
 #: templates/pages/product.html:25
 msgid "In stock"
@@ -259,10 +308,6 @@ msgstr "Товар добавлен в корзину."
 msgid "Go to the cart"
 msgstr "Перейти в корзину"
 
-#: templates/pages/product.html:76
-msgid "Products"
-msgstr "Товары"
-
 #: templates/pages/product.html:77
 msgid "Related Products"
 msgstr "Сопутствующие товары"
@@ -270,3 +315,12 @@ msgstr "Сопутствующие товары"
 #: templates/pages/register.html:14
 msgid "Register"
 msgstr "Регистрироваться"
+
+#~ msgid "Country"
+#~ msgstr "Страна"
+
+#~ msgid "Region"
+#~ msgstr "Район, область"
+
+#~ msgid "Zip/Postal Code"
+#~ msgstr "Индекс почты"

@@ -23,7 +23,6 @@
                             {% if user_orders|length != 0 %}
                                 {% for o in user_orders %}
                                   <tr class="text-center">
-{#                                    <td class="product-remove"><a href="?delete={{ c.product_id }}"><span class="ion-ios-close"></span></a></td>#}
                                     <td class="product-remove">{{ o.id }}</td>
                                     <td class="price">
                                         {% for pr in o.products %}

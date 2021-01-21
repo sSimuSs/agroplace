@@ -1,6 +1,6 @@
 import requests
 import urllib
-import telebot
+# import telebot
 import random
 import string
 from django.core.mail import EmailMultiAlternatives
@@ -49,13 +49,13 @@ def sendMail(receiver, template, required_data):
     msg.send()
 
 
-def msgTGtouniversal(to, msg, keyboard=None, disable_web_page_preview=False):
-    # bot = telebot.TeleBot("355989935:AAGGHyAYm-YxU650F3zV-BhL0wM9cE654AI")
-    bot = telebot.TeleBot("1203158555:AAE54GGECtPtz71vIqsqTGnz5VTVYRu39o0")
-    try:
-        bot.send_message(to, msg, parse_mode="Markdown", reply_markup=keyboard, disable_web_page_preview=disable_web_page_preview)
-    except:
-        pass
+# def msgTGtouniversal(to, msg, keyboard=None, disable_web_page_preview=False):
+#     # bot = telebot.TeleBot("355989935:AAGGHyAYm-YxU650F3zV-BhL0wM9cE654AI")
+#     bot = telebot.TeleBot("1203158555:AAE54GGECtPtz71vIqsqTGnz5VTVYRu39o0")
+#     try:
+#         bot.send_message(to, msg, parse_mode="Markdown", reply_markup=keyboard, disable_web_page_preview=disable_web_page_preview)
+#     except:
+#         pass
 
 
 def get_random_code(number):

@@ -25,7 +25,7 @@ SECRET_KEY = '=)-1^0=yxz!(3x=-zws!5j%5-w_@=%99hs2zby)dw@#@f425=8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1']
+ALLOWED_HOSTS = ['89.108.71.20', '127.0.0.1', '89-108-71-20.cloudvps.regruhosting.ru']
 
 
 # Application definition

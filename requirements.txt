@@ -1,2 +1,5 @@
 django
 django-modeltranslation
+django-crispy-forms
+requests
+Pillow

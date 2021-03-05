@@ -1,4 +1,4 @@
-# Agroplace sample application
+# Agroplace - multi-language, modern designed, ready-to-use application in agro theme.
 
 ## Setup
 
